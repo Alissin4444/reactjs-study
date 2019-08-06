@@ -1,0 +1,2 @@
+A ideia central é ter um local onde todos meus outros componentes podem acessar um state
+import {createContext} from "react";
