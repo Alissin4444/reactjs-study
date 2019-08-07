@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+
+export default function App() {
+  const [state, setState] = useState({
+    name: "",
+    value: 0
+  });
+
+  function handleChangeTitle(e) {
+    setState({ name: e.target.value });
+  }
+
+  function handleChangeValue(e) {
+    const newState = { ...state };
+    newState.value = e.target.value;
+    setState(newState);
+  }
+
+  return (
+    <>
+      <div className="App">
+        <span>{state.name}</span>
+        <br />
+        {state.value !== 0 && <span>{state.value}</span>}
+        <hr />
+        <input
+          placeholder="Digite seu título"
+          type="text"
+          value={state.name}
+          onChange={handleChangeTitle}
+        />
+        {state.name && (
+          <input
+            placeholder="Digite o seu valor"
+            type="text"
+            value={state.value || ""}
+            onChange={handleChangeValue}
+          />
+        )}
+        {state.value > 1 && (
+          <input type="submit" value="Deseja adicionar uma questão?" />
+        )}
+      </div>
+    </>
+  );
+}
