@@ -28,10 +28,13 @@ function App() {
           <input type="text" onChange={e => handlerCreateCard(e)} />
           <div className="card">
             {state.users.map((user, index) => {
+              console.log(index);
               return (
                 <div key={index}>
                   {user.name} <br />
                   {user.idade.map((idade, id) => {
+                    console.log(id);
+                    // console.log(idade);
                     return <input key={id} value={idade} />;
                   })}
                 </div>
