@@ -1,0 +1,78 @@
+import React, { useState } from "react";
+import MaterialTable from "material-table";
+
+export default function App() {
+  const [state, SetState] = useState({
+    columns: [
+      { title: "Nome", field: "name" },
+      { title: "Habilidade", field: "skill" },
+      { title: "Nível de amor", field: "like" }
+    ],
+    data: [
+      {
+        name: "El",
+        skill:
+          "Encontrar pessoas, flutuar coisas com a mente e acessar o mundo invertido",
+        like: "infinito"
+      },
+      { name: "Mike", skill: "Empatia", like: 6 },
+      { name: "Will", skill: "Ser espião do mundo invertido", like: 3 },
+      {
+        name: "Dustin",
+        skill: "Altamente inteligente e engraçado",
+        like: 7
+      },
+      {
+        name: "Lucas",
+        skill: "Briguento e objetivo, além de ser leal",
+        like: 5
+      },
+      { name: "Max", skill: "Boa personalidade e inteligência", like: 5 },
+      {
+        name: "Nancy",
+        skill: "Forte personalidade, objetiva, empática e meiga",
+        like: 7
+      },
+      {
+        name: "Jonathan",
+        skill: "Quieto, inteligente e objetivo",
+        like: 9
+      },
+      {
+        name: "Steve",
+        skill: "Amigo, inteligente, forte e leal",
+        like: 6
+      },
+      {
+        name: "Hoppers",
+        skill:
+          "Muito inteligente e objetivo, além de cuidar de nossa pequena eleven",
+        like: 10
+      },
+      { name: "Joyce", skill: "Mãe super protetora", like: 5 }
+    ]
+  });
+
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+          width: "100vw"
+        }}
+      >
+        <MaterialTable
+          style={{
+            boxShadow: "0 2px 40px 40px rgba(0,0,0,.05)"
+          }}
+          title="Personagens do Stranger Things"
+          columns={state.columns}
+          data={state.data}
+        />
+      </div>
+    </div>
+  );
+}
