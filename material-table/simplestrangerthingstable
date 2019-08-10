@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MaterialTable from "material-table";
 
 export default function App() {
-  const [state, SetState] = useState({
+  const [state, setState] = useState({
     columns: [
       { title: "Nome", field: "name" },
       { title: "Habilidade", field: "skill" },
@@ -67,6 +67,24 @@ export default function App() {
         <MaterialTable
           style={{
             boxShadow: "0 2px 40px 40px rgba(0,0,0,.05)"
+          }}
+          localization={{
+            body: {
+              emptyDataSourceMessage: "Nenhum estranho foi encontrado"
+            },
+            toolbar: {
+              searchTooltip: "Pesquisar",
+              searchPlaceholder: "Pesquisar"
+            },
+            pagination: {
+              labelRowsSelect: "Estranhos selecionados",
+              labelDisplayedRows:
+                "{from}-{to} estranhos - {count} estranhos ao todo",
+              firstTooltip: "Voltar ao primeiro estranho",
+              previousTooltip: "Voltar",
+              nextTooltip: "Próximo",
+              lastTooltip: "Ir ao último estranho"
+            }
           }}
           title="Personagens do Stranger Things"
           columns={state.columns}
